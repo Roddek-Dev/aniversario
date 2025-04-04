@@ -1,114 +1,147 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- 💌 Meta Etiquetas para Redes Sociales (Open Graph) -->
-    <meta property="og:title" content="1 Mes Contigo 💖">
-    <meta property="og:description" content="El tiempo contigo se pasa muy rapido, cada momento es maravilloso contigo y este solo es el inicio del baul de recuerdos que quiero armar contigo.">
-    <meta property="og:image" content="image.png">
-    <meta property="og:url" content="https://roddek-dev.github.io/aniversario/">
-    <meta property="og:type" content="website">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Open Graph (para WhatsApp, Facebook, etc.) -->
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:title" content="💖 1 Mes Contigo 💖" />
+    <meta
+      property="og:description"
+      content="El tiempo contigo se pasa volando, cada momento es maravilloso. Este solo es el inicio de nuestro baúl de recuerdos."
+    />
+    <meta
+      property="og:image"
+      content="https://roddek-dev.github.io/aniversario/image.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:url"
+      content="https://roddek-dev.github.io/aniversario/"
+    />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card (para compatibilidad con Twitter y otros servicios) -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="💖 1 Mes Contigo 💖" />
+    <meta
+      name="twitter:description"
+      content="El tiempo contigo se pasa volando, cada momento es maravilloso y este solo es el inicio de nuestro baúl de recuerdos."
+    />
+    <meta
+      name="twitter:image"
+      content="https://roddek-dev.github.io/aniversario/image.png"
+    />
+
     <title>1 Mes Contigo</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #222;
-            margin: 0;
-            font-family: 'Arial', sans-serif;
-        }
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #222;
+        margin: 0;
+        font-family: "Arial", sans-serif;
+      }
+      .container {
+        text-align: center;
+        position: relative;
+        width: 100%;
+        max-width: 500px;
+      }
+      .image {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+      }
+      .candle {
+        position: absolute;
+        top: -50px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 50px;
+        height: 80px;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        font-size: 16px;
+        color: #222;
+      }
+      .flame {
+        position: absolute;
+        top: -25px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 20px;
+        height: 30px;
+        background: orange;
+        border-radius: 50%;
+        box-shadow: 0 0 10px rgba(255, 140, 0, 0.8);
+      }
+      @media (max-width: 600px) {
         .container {
-            text-align: center;
-            position: relative;
-            width: 100%;
-            max-width: 500px;
-        }
-        .image {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+          max-width: 100%;
+          padding: 10px;
         }
         .candle {
-            position: absolute;
-            top: -50px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 50px;
-            height: 80px;
-            background: #fff;
-            border-radius: 10px;
-            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            font-weight: bold;
-            font-size: 16px;
-            color: #222;
+          width: 60px;
+          height: 100px;
+          font-size: 18px;
         }
         .flame {
-            position: absolute;
-            top: -25px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 20px;
-            height: 30px;
-            background: orange;
-            border-radius: 50%;
-            box-shadow: 0 0 10px rgba(255, 140, 0, 0.8);
+          width: 25px;
+          height: 35px;
         }
-        @media (max-width: 600px) {
-            .container {
-                max-width: 100%;
-                padding: 10px;
-            }
-            .candle {
-                width: 60px;
-                height: 100px;
-                font-size: 18px;
-            }
-            .flame {
-                width: 25px;
-                height: 35px;
-            }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <div class="candle">
-            <span id="candleText">1 Mes</span>
-            <div class="flame"></div>
-        </div>
-        <img src="image.png" alt="Aniversario" class="image">
+      <div class="candle">
+        <span id="candleText">1 Mes</span>
+        <div class="flame"></div>
+      </div>
+      <img src="image.png" alt="Aniversario" class="image" />
     </div>
-    
+
     <script>
-        // Animación de la llama
-        gsap.to(".flame", { 
-            y: -5, 
-            scaleX: 1.2, 
-            duration: 0.5, 
-            repeat: -1, 
-            yoyo: true,
-            ease: "sine.inOut"
-        });
+      // Animación de la llama
+      gsap.to(".flame", {
+        y: -5,
+        scaleX: 1.2,
+        duration: 0.5,
+        repeat: -1,
+        yoyo: true,
+        ease: "sine.inOut",
+      });
 
-        function actualizarMeses() {
-            const fechaInicio = new Date("2025-04-04"); // Fecha de inicio de la relación
-            const fechaActual = new Date();
-            const diferenciaMeses = (fechaActual.getFullYear() - fechaInicio.getFullYear()) * 12 + (fechaActual.getMonth() - fechaInicio.getMonth());
-            document.getElementById("candleText").innerText = `${diferenciaMeses + 1} Mes${diferenciaMeses !== 0 ? 'es' : ''}`;
-        }
+      function actualizarMeses() {
+        const fechaInicio = new Date("2025-04-04"); // Fecha de inicio de la relación
+        const fechaActual = new Date();
+        const diferenciaMeses =
+          (fechaActual.getFullYear() - fechaInicio.getFullYear()) * 12 +
+          (fechaActual.getMonth() - fechaInicio.getMonth());
+        document.getElementById("candleText").innerText = `${
+          diferenciaMeses + 1
+        } Mes${diferenciaMeses !== 0 ? "es" : ""}`;
+      }
 
-        actualizarMeses();
+      actualizarMeses();
     </script>
-</body>
+  </body>
 </html>
