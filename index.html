@@ -6,7 +6,7 @@
     <!-- Open Graph (para WhatsApp, Facebook, etc.) -->
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="fb:app_id" content="1234567890">
+    <meta property="fb:app_id" content="1234567890" />
     <meta property="og:site_name" content="1 Mes Contigo" />
     <meta property="og:locale" content="es_ES" />
     <meta property="og:title" content="💖 1 Mes Contigo 💖" />
@@ -121,6 +121,11 @@
       </div>
       <img src="image.png" alt="Aniversario" class="image" />
     </div>
+    <audio id="background-audio" autoplay>
+      <source src="Jerry Rivera - Amores Como El Nuestro (Letra).mp3" type="audio/mpeg">
+      Tu navegador no soporta el audio.
+    </audio>
+    
 
     <script>
       // Animación de la llama
@@ -145,6 +150,19 @@
       }
 
       actualizarMeses();
+      document.addEventListener("DOMContentLoaded", function () {
+        const audio = document.getElementById("background-audio");
+
+        // Intentar reproducir el audio
+        const playAudio = () => {
+          audio.play().catch(() => {
+            console.log("El navegador bloqueó la reproducción automática.");
+          });
+        };
+
+        // Detectar interacción del usuario para permitir el audio
+        document.body.addEventListener("click", playAudio, { once: true });
+      });
     </script>
   </body>
 </html>
